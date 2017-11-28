@@ -183,8 +183,7 @@ int main()
 										break;
 									}
 								}
-							}
-								
+							}	
 							gettimeofday(&end, NULL);
 							time_spent = (double)(end.tv_sec-start.tv_sec);
 						} while(time_spent < RUN_DURATION);
@@ -195,5 +194,8 @@ int main()
 		}	
 	}
 	
+	for (i = 0; i < 5; i++) {
+		kill(process_ID[i]);
+	}
 	return 0;
 }
